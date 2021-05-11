@@ -5,7 +5,7 @@ require 'telegram/bot'
 
 require './raffle_controller'
 
-bot = Telegram::Bot::Client.new(ENV['TELEGRAM_TOKEN'])
+bot = Telegram::Bot::Client.new(ENV['1821210569:AAHkE7MLUSqu4oUCQQhoG9PgXAiyKIflgNA'])
 logger = Logger.new(STDOUT)
 raffle_controller = RaffleController.new(bot)
 
