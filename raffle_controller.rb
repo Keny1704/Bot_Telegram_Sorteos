@@ -10,7 +10,7 @@ class RaffleController
   def initialize(bot)
     @bot = bot
 
-    redis_url = "#{ENV["REDIS_URL"]}/1"
+    redis_url = "#{ENV["https://T.me/StreamSell_Bot"]}/1"
     @raffle = Raffle.new(redis_url)
     @logger = Logger.new(STDOUT)
   end
@@ -141,17 +141,15 @@ class RaffleController
     chat_id = message['chat']['id']
     return if chat_id.nil?
 
-    text = '¡Hola! Soy un bot que hace sorteos en grupos de Telegram.
+    text = '¡Hola! Soy el bot de sorteos de Stream Sell.
 Estos son mis comandos:
 
-- */agregarme@sorteorobot* te agrega al sorteo
-- */quitarme@sorteorobot* te quita del sorteo
-- */concursantes@sorteorobot* muestra las personas que participan
-- */sorteo@sorteorobot* ¡HACE EL SORTEO! (duh)
-- */reset@sorteorobot* quita a todos del sorteo
-- */help@sorteorobot* muestra esta ayuda
-
-[Leer más](https://betzerra.com/sorteo-bot-telegram).'
+- */agregarme@StreamSell_Bot* te agrega al sorteo
+- */quitarme@StreamSell_Bot* te quita del sorteo
+- */concursantes@StreamSell_Bot* muestra las personas que participan
+- */sorteo@StreamSell_Bot* ¡HACE EL SORTEO! (duh)
+- */reset@StreamSell_Bot* quita a todos del sorteo
+- */help@StreamSell_Bot* muestra esta ayuda
 
     begin
       @bot.api.send_message(
@@ -176,7 +174,7 @@ Estos son mis comandos:
     begin
       @bot.api.send_message(
         chat_id: chat_id,
-        text: "Hola, #{from}. No te entiendo. \n\nEscribe */help@sorteorobot* para más información o lee este [blog post](https://betzerra.com/sorteo-bot-telegram)",
+        text: "Hola, #{from}. No te entiendo. \n\nEscribe */help@StreamSell_Bot* para más información o lee este",
         parse_mode: 'markdown'
       )
     rescue => e
